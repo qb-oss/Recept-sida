@@ -1,0 +1,40 @@
+﻿@using Web.Models
+@model Recepts
+
+@*Här visas det receptet som du har valt*@
+
+@*Skriver ut namnet på receptet*@
+<div class="Title" id="Shadow">
+    <h1 id="Textes">@Model.Title</h1>
+</div>
+
+@*skriver ut hur många det här recepte är för*@
+<div class="Portioner" id="Shadow">
+    <h5 id="Textes">@Model.Portioner</h5>
+</div>
+
+
+<div class="Ingridienser">
+    @*skriver ut vilka ingridiencer man behöver och hur mycket av varge*@
+    <div class="instuktsib">
+        @for (int i = 0; i < Model.IMot.Length; i++)
+        {
+            <div class="Ingrid" id="Shadow">
+                <p id="Textes"> @Model.IAmount[i] @Model.IMot[i] @Model.IType[i]</p>
+            </div>
+        }
+    </div>
+    @*Hur man ska göra*@
+    <div class="instruktioner" id="Shadow">
+        <p id="Textes">@Model.Howto</p>
+    </div>
+</div>
+<div id="Buttons">
+    @*knapp som låtter en skriva ut receptet*@
+    <button class="Butun" id="print" onclick="window.print();return false;">Print</button>
+
+    @*lägger till en kanpp för att radera receptet*@
+    <form action="/Home/DeleteRecept/@Model.Id" method="post">
+        <button class="Butun">Delete</button>
+    </form>
+</div>

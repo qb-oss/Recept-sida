@@ -1,0 +1,12 @@
+﻿@using web_2.Models;
+@model Ingrediens
+@*visar den ingrediensen som man har valt från \Ingrediens\Index*@
+<div>
+    <div class="Title">
+        <h1 id="Textes">@Model.Title</h1>
+    </div>
+
+    <form action="/Ingrediens/DeleteIngrediens/@Model.Id" method="post">
+        <button class="Butun">Delete</button>
+    </form>
+</div>

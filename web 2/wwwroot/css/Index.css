@@ -1,0 +1,87 @@
+﻿a {
+    text-decoration: none;
+}
+
+.Card {
+    padding: 10px;
+    display: inline-block;
+}
+
+.MainCard {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.2s;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+    .MainCard:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+.ReceptTitle {
+    padding: 10px;
+}
+
+.ReceptPortioner {
+    padding: 10px;
+}
+
+.Links {
+    color: black;
+}
+
+    .Links:hover {
+        color: black;
+    }
+
+.Butun {
+    display: table;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    color: black;
+}
+
+    .Butun:hover {
+        color: black;
+    }
+input {
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+    input:focus {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+#SelectOptions {
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#PortionerAmount {
+    padding: 10px;
+    display: inline;
+}
+
+#HowToMakeIt {
+    padding: 10px;
+    border-radius: 10px;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.Things {
+    padding: 10px;
+}
+
+.TableHead {
+    text-align: center;
+}

@@ -1,0 +1,14 @@
+﻿@model List<Ingrediens>
+
+@*vissar all ingredienser. är en kopia av koden i /Home/Index*@
+@foreach (Ingrediens ingredienser in Model)
+{
+    <div id="Shadow" class="MainCard">
+        @*lägger till en länk till ingrediensen*@
+        <a href="/Ingrediens/Show/@ingredienser.Id" class="Links">
+            <h3>@ingredienser.Title</h3>
+        </a>
+    </div>
+}
+@*knapp för att skapa en ingrediens*@
+<a href="/Ingrediens/Create" class="Butun">Create</a>

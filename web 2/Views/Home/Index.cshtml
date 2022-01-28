@@ -1,0 +1,22 @@
+﻿@using Web.Models
+@model List<Recepts>
+
+@*en loop som visar alla recept*@
+@foreach (Recepts recept in Model)
+{
+    <div class=Card>
+        <div class="MainCard">
+            <a href="/Home/Show/@recept.Id" class="Links">
+                <div class="ReceptTitle">
+                    <h2>@recept.Title</h2>
+                </div>
+                <div class="ReceptPortioner">
+                    <p>Portioner @recept.Portioner</p>
+                </div>
+            </a>
+        </div>
+    </div>
+}
+
+@*knapp som leder till /Home/Create där man gör recept*@
+<a href="/Home/Create" class=Butun>Create</a>

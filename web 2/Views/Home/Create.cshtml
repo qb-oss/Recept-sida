@@ -1,0 +1,99 @@
+﻿@using web_2.Models;
+@model List<Ingrediens>
+
+<script>
+
+        //lägger till en rad i tabelen coden är bara en kopia på coden nedan
+    function AddRowToTable()    
+    {
+            //hämtar tabelen med den Id
+        var table = document.getElementById("IngridiencTable");
+            //lägger till en rad längst ner i tabelen
+        var row = table.insertRow(-1);
+            //lägger in tre celler i raden som vi latill ovan
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+            //sätter code för cellen
+        cell1.innerHTML = '<input type="number" name="IAmount" placeholder="How much" />';
+        cell2.innerHTML = '<select id="SelectOptions" name="IMot">'+
+                            '<option value="ml">ml</option>'+
+                            '<option value="dl">dl</option>'+
+                            '<option value="cl">cl</option>'+
+                            '<option value="Liter">Liter</option>'+
+                            '<option value="g">g</option>'+
+                            '<option value="kg">kg</option>'+
+                            '<option value="st">st</option>'+
+                          '</select>';
+        cell3.innerHTML ='<select id="SelectOptions" name="itype">@foreach (Ingrediens ingredienser in Model){<option value="@ingredienser.Title">@ingredienser.Title</option>}</select>'
+    }
+        //tar bort botten raden från tabelen
+    function RemoveRowFromTable(){
+        document.getElementById("IngridiencTable").deleteRow(-1);
+    }
+</script>
+
+<form action="/Home/Create" method="post">
+
+    <div>
+        <div> 
+            @*Skriver in namnet på receptet*@
+            <input required type="text" name="Title" id="Title" placeholder="What is it" />     
+        </div>
+        <div>
+            @*det här är tabelen för ingreienserna*@
+            <table id="IngridiencTable" >        
+                <tr>
+                    <th class="TableHead">How much</th>
+                    <th class="TableHead">Måt</th>
+                    <th class="TableHead">Av vad</th>
+                </tr>
+                <tr>
+                    <td>
+                        @*här skriver man hur mycket det ska va av ingrediensen*@
+                        <input required type="number" name="IAmount" placeholder="How much" />       
+                    </td>
+                    <td>
+                        @*här väljer man vilket måt man ska använda*@
+                        <select  id="SelectOptions" name="IMot">
+                            <option value="ml">ml</option>
+                            <option value="dl">dl</option>
+                            <option value="cl">cl</option>
+                            <option value="Liter">Liter</option>
+                            <option value="g">g</option>
+                            <option value="kg">kg</option>
+                            <option value="st">st</option>
+                        </select>
+                    </td>
+                    <td>
+                        @*Här väljer man ingrediensen man vill ha. man gör en ingrediens på \Ingrediens\Create*@
+                        <select  id="SelectOptions" name="itype">
+                            @*här gör jag så att alla ingredienser fins i listan. det är en kopia på forech loopen från \Views\Home\Index*@
+                            @foreach (Ingrediens ingredienser in Model)
+                            {
+                                <option value="@ingredienser.Title">@ingredienser.Title</option>
+                            }
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            @*den här knapen triggar functionen AddRowToTable som lägger till en rad i tabelen*@
+            <input type="button" class="button" value="Add new Row" onclick="AddRowToTable()">
+
+            @*den här knapen triggar functionen RemoveRowFromTable som tarbort en rad från tabelen*@
+            <input type="button" class="button" value="Delete Row" onclick="RemoveRowFromTable()">
+        </div>
+        <div id="Things">
+            <div>
+                @*Hur många receptert är för*@
+                <input required type="number" id="PortionerAmount" name="Portioner" placeholder="Portioner" />
+            </div>
+            <div>
+                @*Hur man ska göra*@
+                <textarea required name="Howto" id="HowToMakeIt" placeholder="How to make it"></textarea>
+            </div>
+        </div>
+    </div>
+    @*knappen som spara receptet*@
+    <button class="Butun">Save</button>
+</form>

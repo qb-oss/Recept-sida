@@ -1,0 +1,52 @@
+﻿* {
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+#Shadow {
+    display: table;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 2px;
+    border: none;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.Title {
+    margin-left: 20px;
+}
+
+.Portioner {
+    margin-left: 20px;
+}
+
+.Ingridienser {
+    padding: 10px;
+    display: Flex;
+}
+
+.instuktsib {
+    display: block;
+    padding: 10px;
+    width: 50%;
+}
+
+.Ingrid {
+    width: 100%;
+}
+
+.instruktioner {
+    width: 50%;
+}
+
+#Buttons {
+    margin-left: 20px;
+    display:flex;
+
+}
+
+#print{
+    margin-bottom:5px;
+    margin-right:5px;
+}
